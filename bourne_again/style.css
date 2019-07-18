@@ -1,6 +1,36 @@
+ /* HEADER
+ ================*/
 header {
    text-align: center;
 }
+/* ======================
+   USER INPUT
+====================== */
 .user-input-interface {
    text-align: center;
+   margin-bottom: 20px;
+}
+.user-input-button {
+
+}
+/* ====================
+   CAROUSEL STYLING
+===================== */
+.carousel-container {
+   width: 70%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+}
+.carousel-cards {
+   width: 80%;
+   border: 1px solid black;
+}
+.carousel-cards {
+   text-transform: capitalize;
+}
+.carousel-button {
+   background-color: green;
+   align-self: center;
+   margin: 15px;
 }
