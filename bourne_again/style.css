@@ -1,3 +1,9 @@
+/*  BODY
+//////////// */
+body {
+   background-color: black;
+   color: ghostwhite;
+}
  /* HEADER
  ================*/
 header {
@@ -11,6 +17,13 @@ header {
    margin-bottom: 20px;
 }
 .user-input-button {
+   outline: none;
+}
+select {
+   outline: none;
+}
+option {
+   outline: none;
 
 }
 /* ====================
@@ -24,13 +37,26 @@ header {
 }
 .carousel-cards {
    width: 80%;
-   border: 1px solid black;
-}
-.carousel-cards {
+   /* border: 1px solid ghostwhite; */
+   /* display: none; */
    text-transform: capitalize;
+}
+.identity-card img {
+   margin: 0 auto;
+}
+.identity-card:first-of-type {
+   /* display: block; */
 }
 .carousel-button {
    background-color: green;
    align-self: center;
    margin: 15px;
+   padding: 10px;
+   border-radius: 3px;
+}
+.hide {
+   display: none;
+}
+.show {
+   display: block;
 }

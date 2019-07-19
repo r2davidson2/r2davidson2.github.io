@@ -1,3 +1,6 @@
+
+
+
 $(() => {
 
    const $generateCard = () => {
@@ -21,19 +24,22 @@ $(() => {
    //////////////////////////////
    $('form').on('submit', (event) => {
       event.preventDefault();
+      //Current Image Element
+      let $currentCard;
 
       const ageInput = $(".age-input").val();
          // console.log(ageInput);
       const genderInput = $(".gender-input").val();
          // console.log(genderInput);
 
-      for (i = 0; i < 3; i++) {
+      for (let i = 0; i < 3; i++) {
          // Pull profile data from API
          $.ajax({
            url: `https://randomuser.me/api/?gender=${genderInput}`,
            dataType: 'json',
          }).then(
             (data) => {
+               // console.log(data);
                const $firstName = $('<div>').text(data.results[0].name.first);
                const $lastName = $('<div>').text(data.results[0].name.last);
                const $photo = $('<img>').addClass('profile-photo').attr('src', data.results[0].picture.large);
@@ -43,10 +49,18 @@ $(() => {
 
                $card.append($cardData);
 
+            if (i === 0) {
+               $card.addClass('show');
+               $currentCard = $card
+                  console.log($card);
+            } else {
+               $card.addClass('hide');
+            };
+
                $('.carousel-cards').append($card);
 
-               console.log($photo);
-               console.log(data.results[0].gender);
+               // console.log($photo);
+               // console.log(data.results[0].gender);
          },
             (error) => {
                console.log(error);
@@ -54,23 +68,52 @@ $(() => {
          );
 
       };
+
+      //////////////////////
+      // Carousel Variables
+      //////////////////////
+      //Count Variable to Track Current Image Index
+      let currentCarouselCard = 0;
+      //Total Number of Cards
+      let numberOfCards = 2;
+      //////////////////////
+      // NEXT BUTTON
+      //////////////////////
+      const $nextButton = $('.next');
+
+      $nextButton.on('click', () => {
+         $currentCard.removeClass('show').addClass('hide');
+
+         if (currentCarouselCard < numberOfCards) {
+            currentCarouselCard++;
+         } else {
+            currentCarouselCard = 0;
+         };
+
+         $currentCard = $('.carousel-cards').children().eq(currentCarouselCard);
+         $currentCard.removeClass('hide').addClass('show');
+         console.log($currentCard);
+         console.log(currentCarouselCard);
+      })
+      //////////////////////
+      // PREVIOUS BUTTON
+      //////////////////////
+      const $previousButton = $('.previous');
+
+      // $previousButton.on('click', () => {
+      //    $currentCard.removeClass('show').addClass('hide');
+      //
+      //    if (currentCarouselCard > 0) {
+      //       currentCarouselCard--;
+      //    } else {
+      //       currentCarouselCard = numberOfCards;
+      //    };
+      //
+      //    $currentCard = $('.carousel-cards').children().eq(currentCarouselCard);
+      //    $currentCard.removeClass('hide').addClass('show');
+      //    console.log('clicked');
+      // })
+
    });
-
-   //////////////////////
-   // Carousel Variables
-   //////////////////////
-   let currentCarouselCard = 0;
-
-   let $currentCard = $('.carousel-cards').children().eq(currentCarouselCard);
-
-   let numberOfCards = $('.carousel-cards').children().length -1;
-   //////////////////////
-   // NEXT BUTTON
-   //////////////////////
-   const $nextButton = $('next');
-
-   $next.on('click', () => {
-
-   })
 
 });
