@@ -53,6 +53,7 @@ option {
    margin: 15px;
    padding: 10px;
    border-radius: 3px;
+   cursor: pointer;
 }
 .hide {
    display: none;
