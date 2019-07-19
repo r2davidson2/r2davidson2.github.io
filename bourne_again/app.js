@@ -1,5 +1,40 @@
-
-
+const nationalityTranslation = (data) => {
+   if (data.results[0].nat === 'AU') {
+      return 'Nationality: Australian';
+   } else if (data.results[0].nat === 'BR') {
+      return 'Nationality: Brazilian';
+   } else if (data.results[0].nat === 'CA') {
+      return 'Nationality: Canadian';
+   } else if (data.results[0].nat === 'CH') {
+      return 'Nationality: Swiss';
+   } else if (data.results[0].nat === 'DE') {
+      return 'Nationality: German';
+   } else if (data.results[0].nat === 'DK') {
+      return 'Nationality: Danish';
+   } else if (data.results[0].nat === 'ES') {
+      return 'Nationality: Spanish';
+   } else if (data.results[0].nat === 'FI') {
+      return 'Nationality: Finnish';
+   } else if (data.results[0].nat === 'FR') {
+      return 'Nationality: French';
+   } else if (data.results[0].nat === 'GB') {
+      return 'Nationality: British';
+   } else if (data.results[0].nat === 'IE') {
+      return 'Nationality: Irish';
+   } else if (data.results[0].nat === 'IR') {
+      return 'Nationality: Iranian';
+   } else if (data.results[0].nat === 'NO') {
+      return 'Nationality: Norwegian';
+   } else if (data.results[0].nat === 'NL') {
+      return 'Nationality: Dutch';
+   } else if (data.results[0].nat === 'NZ') {
+      return 'Nationality: Kiwi';
+   } else if (data.results[0].nat === 'TR') {
+      return 'Nationality: Turkish';
+   } else if (data.results[0].nat === 'US') {
+      return 'Nationality: American';
+   }
+}
 
 $(() => {
 
@@ -20,16 +55,19 @@ $(() => {
       $('.carousel-cards').append($card);
    }
    //////////////////////////////
-   // Submit Generate Identities
+   // Submit Generate Selection
    //////////////////////////////
-   $('form').on('submit', (event) => {
+   $('button').on('click', (event) => {
       event.preventDefault();
       //Current Image Element
       let $currentCard;
-
+      $('.carousel-cards').empty();
+      //Create Carousel Buttons Variable
+      const $carouselButtons = $('.carousel-button');
+      //Create Nation Input Variable
       const nationInput = $(".select").children('option:selected').val();
-         console.log(nationInput);
-
+         // console.log(nationInput);
+      //Generate Profiles to Choose From
       for (let i = 0; i < 3; i++) {
          // Pull profile data from API
          $.ajax({
@@ -37,21 +75,27 @@ $(() => {
            dataType: 'json',
          }).then(
             (data) => {
-               // console.log(data);
-               const $firstName = $('<div>').text(data.results[0].name.first);
-               const $lastName = $('<div>').text(data.results[0].name.last);
+               //Create Profile First Name Variable
+               const $firstName = $('<p>').text(data.results[0].name.first);
+               //Create Profile Last Name Variable
+               const $lastName = $('<p>').text(data.results[0].name.last);
+               //Create Profile Full Name Variable
+               const $fullName = $('<p>').text(`Alias: ${data.results[0].name.first} ${data.results[0].name.last}`);
+               //Create Profile Photo Variable
                const $photo = $('<img>').addClass('profile-photo').attr('src', data.results[0].picture.large);
-               const $nation = data.results[0].nat;
-                  console.log($nation);
-
+               //Create Profile Nationality Variable
+               const $nationality = $('<p>').text(nationalityTranslation(data));
+                  console.log($nationality);
+               //Create Profile Card as a div and add a class
                const $card = $('<div>').addClass('identity-card');
-
-               const $cardData = $('<div>').append($photo).append($firstName).append($lastName);
+               //Append Profile Data to the Profile Card used in the Carousel
+               const $cardData = $('<div>').append($photo).append($fullName).append($nationality);
 
                $card.append($cardData);
 
             if (i === 0) {
                $card.addClass('show');
+               $carouselButtons.removeClass('hide').addClass('show');
                $currentCard = $card;
             } else {
                $card.addClass('hide');
