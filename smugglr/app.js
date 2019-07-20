@@ -36,6 +36,8 @@ const nationalityTranslation = (data) => {
    }
 }
 
+
+
 $(() => {
 
    const $generateCard = () => {
@@ -61,6 +63,7 @@ $(() => {
       event.preventDefault();
       //Current Image Element
       let $currentCard;
+
       $('.carousel-cards').empty();
       //Create Carousel Buttons Variable
       const $carouselButtons = $('.carousel-button');
@@ -153,6 +156,25 @@ $(() => {
          $currentCard = $('.carousel-cards').children().eq(currentCarouselCard);
          $currentCard.removeClass('hide').addClass('show');
       })
+
+      //////////////////////
+      // SELECT SMUGGLR BUTTON
+      //////////////////////
+      const $selectSmuggler = $('.choose-smugglr');
+
+      // const $correctWebsite = $('<a>').attr('href', 'https://www.cbp.gov/contact');
+      //
+      $selectSmuggler.attr('href', 'https://www.cbp.gov/contact')
+
+      // $selectSmuggler.on('click', () => {
+      //    const $correctWebsite = $('<a>').attr('href', 'https://www.cbp.gov/contact');
+      //
+      //    $selectSmuggler.append($correctWebsite);
+      //
+      //    // event.preventDefault();
+      //    console.log("it's the correct button");
+      //
+      // })
 
    });
 
