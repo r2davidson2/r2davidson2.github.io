@@ -15,10 +15,16 @@ header {
 h1 {
    font-size: 250%;
 }
+.banner-questions {
+   display: flex;
+   justify-content: space-around;
+}
 header p {
    font-size: 110%;
-   width: 70%;
+   max-width: 30%;
    margin: 0 auto 3em auto;
+   letter-spacing: 1px;
+   padding: 25px;
 }
 /* ======================
    USER INPUT
@@ -93,7 +99,6 @@ header p {
 }
 a {
    background-color: green;
-   align-self: center;
    margin: 15px;
    padding: 10px;
    border-radius: 3px;
