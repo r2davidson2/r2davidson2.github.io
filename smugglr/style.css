@@ -51,6 +51,8 @@ h1 {
    width: 175px;
    height: 30px;
    font-size: 20px;
+   background-color: ghostwhite;
+   color: black;
    /* margin-right: 5px; */
 }
 .submit {
