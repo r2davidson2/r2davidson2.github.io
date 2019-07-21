@@ -36,7 +36,13 @@ const nationalityTranslation = (data) => {
    }
 }
 
+const randomSelector = (array) => {
+   Math.floor(Math.random() * array.length);
+};
 
+const secretSkill = [];
+
+const languagesFluentIn = ['english', 'spanish', 'french', 'german', 'portuguese', 'italian', 'mandarin', 'hindi', 'arabic', 'russian', 'turkish', 'polish', 'danish', 'swedish', 'irish gaelic', 'norwegian', 'dutch'];
 
 $(() => {
 

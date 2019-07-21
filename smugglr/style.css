@@ -19,12 +19,19 @@ h1 {
    display: flex;
    justify-content: space-around;
 }
-header p {
+.banner-questions p {
    font-size: 110%;
    max-width: 30%;
    margin: 0 auto 3em auto;
-   letter-spacing: 1px;
+   letter-spacing: 0.1em;
    padding: 25px;
+   margin: 0 auto 10px auto;
+}
+#info {
+   width: 70%;
+   font-size: 110%;
+   letter-spacing: 0.1em;
+   margin: 0 auto 10px auto;
 }
 /* ======================
    USER INPUT
