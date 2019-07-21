@@ -40,7 +40,7 @@ const randomSelector = (array) => {
    Math.floor(Math.random() * array.length);
 };
 
-const secretSkill = [];
+const specialiseInSmuggling = ['Animals (Except Dingos)', 'Dingos', 'Food & Agriculture', 'Fine Art', 'Antiques & Rare Relics', 'Fine Wine/Moonshine', 'Diamonds', 'Gems & Precious Metals', 'Heavy Metals & Compounds', 'Secret Information', 'Electronics'];
 
 const languagesFluentIn = ['english', 'spanish', 'french', 'german', 'portuguese', 'italian', 'mandarin', 'hindi', 'arabic', 'russian', 'turkish', 'polish', 'danish', 'swedish', 'irish gaelic', 'norwegian', 'dutch', 'persian', 'finnish'];
 
@@ -103,6 +103,32 @@ $(() => {
                const $nationality = $('<p>').text(nationalityTranslation(data));
                   // console.log($nationality);
                ////////////////////////////////////
+               //Create Profile Smuggling Specialty
+               ////////////////////////////////////
+               const generateSmugglingSpecialties = () => {
+                  let listOfSpecialties = '';
+
+                  for (let i = 1; i <= 3; i++) {
+                     let specialty = specialiseInSmuggling[Math.floor(Math.random() * 11)];
+
+                     if (i === 1) {
+                        if (listOfSpecialties.includes(specialty) === false) {
+                           listOfSpecialties += specialty;
+                           console.log(listOfSpecialties);
+                        }
+                     } else {
+                        if (listOfSpecialties.includes(specialty) === false) {
+                           listOfSpecialties += ', ' + specialty;
+                           console.log(listOfSpecialties);
+                        }
+                     }
+                  }
+                  return listOfSpecialties;
+                  console.log(listOfSpecialties);
+               };
+               //Create Variable of Smuggling Specialties
+               const $specialisesInSmuggling = $('<p>').text('Specialises in: ' + generateSmugglingSpecialties());
+               ////////////////////////////////////
                //Create Profile Languages Fluent In
                ////////////////////////////////////
                //Generate Native Language
@@ -154,16 +180,14 @@ $(() => {
                         fluentIn += ', ' + language;
                      }
                   }
-
                   return fluentIn;
-                  console.log(fluentIn);
                };
                //Create Variable of All Languages Spoken
                const $languagesSpoken = $('<p>').text('Fluent in: ' + $generateLanguages());
                //Create Profile Card as a div and add a class
                const $card = $('<div>').addClass('identity-card');
                //Append Profile Data to the Profile Card used in the Carousel
-               const $cardData = $('<div>').append($photo).append($fullName).append($nationality).append($languagesSpoken);
+               const $cardData = $('<div>').append($photo).append($fullName).append($nationality).append($specialisesInSmuggling).append($languagesSpoken);
 
                $card.append($cardData);
 
