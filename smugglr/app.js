@@ -34,7 +34,7 @@ const nationalityTranslation = (data) => {
    } else if (data.results[0].nat === 'US') {
       return 'Nationality: American';
    }
-}
+};
 
 const randomSelector = (array) => {
    Math.floor(Math.random() * array.length);
@@ -42,7 +42,13 @@ const randomSelector = (array) => {
 
 const secretSkill = [];
 
-const languagesFluentIn = ['english', 'spanish', 'french', 'german', 'portuguese', 'italian', 'mandarin', 'hindi', 'arabic', 'russian', 'turkish', 'polish', 'danish', 'swedish', 'irish gaelic', 'norwegian', 'dutch'];
+const languagesFluentIn = ['english', 'spanish', 'french', 'german', 'portuguese', 'italian', 'mandarin', 'hindi', 'arabic', 'russian', 'turkish', 'polish', 'danish', 'swedish', 'irish gaelic', 'norwegian', 'dutch', 'persian', 'finnish'];
+
+const randomNumberOfLanguages = [2, 3, 4, 5];
+
+
+
+
 
 $(() => {
 
@@ -65,6 +71,7 @@ $(() => {
    //////////////////////////////
    // Submit Generate Selection
    //////////////////////////////
+
    $('button').on('click', (event) => {
       event.preventDefault();
       //Current Image Element
@@ -94,11 +101,69 @@ $(() => {
                const $photo = $('<img>').addClass('profile-photo').attr('src', data.results[0].picture.large);
                //Create Profile Nationality Variable
                const $nationality = $('<p>').text(nationalityTranslation(data));
-                  console.log($nationality);
+                  // console.log($nationality);
+               ////////////////////////////////////
+               //Create Profile Languages Fluent In
+               ////////////////////////////////////
+               //Generate Native Language
+               const nativeLanguage = () => {
+                  if (data.results[0].nat === 'AU') {
+                     return 'english';
+                  } else if (data.results[0].nat === 'BR') {
+                     return 'portuguese';
+                  } else if (data.results[0].nat === 'CA') {
+                     return 'english';
+                  } else if (data.results[0].nat === 'CH') {
+                     return 'french';
+                  } else if (data.results[0].nat === 'DE') {
+                     return 'german';
+                  } else if (data.results[0].nat === 'DK') {
+                     return 'danish';
+                  } else if (data.results[0].nat === 'ES') {
+                     return 'spanish';
+                  } else if (data.results[0].nat === 'FI') {
+                     return 'finnish';
+                  } else if (data.results[0].nat === 'FR') {
+                     return 'french';
+                  } else if (data.results[0].nat === 'GB') {
+                     return 'english';
+                  } else if (data.results[0].nat === 'IE') {
+                     return 'irish gaelic';
+                  } else if (data.results[0].nat === 'IR') {
+                     return 'persian';
+                  } else if (data.results[0].nat === 'NO') {
+                     return 'norwegian';
+                  } else if (data.results[0].nat === 'NL') {
+                     return 'dutch';
+                  } else if (data.results[0].nat === 'NZ') {
+                     return 'english';
+                  } else if (data.results[0].nat === 'TR') {
+                     return 'turkish';
+               } else if (data.results[0].nat === 'US') {
+                     return 'english';
+                  }
+               };
+               //Generate Additional Languages
+               const $generateLanguages = () => {
+                  let fluentIn = nativeLanguage();
+                  let randomizer = Math.floor(Math.random() * 4);
+
+                  for (let i = 0; i < randomNumberOfLanguages[randomizer]; i++) {
+                     let language = languagesFluentIn[Math.floor(Math.random() * 17)];
+                     if (fluentIn.includes(language) === false) {
+                        fluentIn += ', ' + language;
+                     }
+                  }
+
+                  return fluentIn;
+                  console.log(fluentIn);
+               };
+               //Create Variable of All Languages Spoken
+               const $languagesSpoken = $('<p>').text('Fluent in: ' + $generateLanguages());
                //Create Profile Card as a div and add a class
                const $card = $('<div>').addClass('identity-card');
                //Append Profile Data to the Profile Card used in the Carousel
-               const $cardData = $('<div>').append($photo).append($fullName).append($nationality);
+               const $cardData = $('<div>').append($photo).append($fullName).append($nationality).append($languagesSpoken);
 
                $card.append($cardData);
 
