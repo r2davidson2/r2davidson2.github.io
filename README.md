@@ -8,5 +8,5 @@ School project utilizing HTML, CSS, Javascript and jQuery.
 
 API
 
-I used https://randomuser.me/
+I used https://randomuser.me/<br>
 Documentation: https://randomuser.me/documentation
