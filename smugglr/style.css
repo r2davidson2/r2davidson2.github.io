@@ -17,21 +17,29 @@ header {
 
 }
 h1 {
+   color: red;
    font-size: 500%;
    max-width: 80%;
    margin: 20px auto;
 }
 .banner-questions p {
+   color: ghostwhite;
    font-size: 150%;
    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
    width: 65%;
    margin: 0 auto 3em auto;
    letter-spacing: 0.1em;
-   padding: 25px;
+   padding: 10px;
    margin: 0 auto 10px auto;
+   display: flex;
+   align-items: center;
+}
+.diamond:hover {
+   color: red;
 }
 #info {
    width: 80%;
+   color: lightgrey;
    font-size: 110%;
    letter-spacing: 0.1em;
    margin: 30px auto 10px auto;
@@ -51,6 +59,7 @@ h1 {
    outline: none;
    width: 175px;
    height: 30px;
+   font-family: Courier;
    font-size: 20px;
    background-color: ghostwhite;
    color: black;
@@ -60,6 +69,7 @@ h1 {
    outline: none;
    width: 175px;
    height: 30px;
+   font-family: Courier;
    font-size: 20px;
    border-radius: 5px;
    background-color: ghostwhite;
@@ -70,8 +80,8 @@ h1 {
    CAROUSEL STYLING
 ===================== */
 .carousel-container {
-   max-width: 90%;
-   margin: 75px auto;
+   /* width: 100%; */
+   margin: 0px auto;
    display: flex;
    justify-content: center;
 }
@@ -96,12 +106,17 @@ h1 {
    /* display: block; */
 }
 .carousel-button {
-   background-color: green;
+   color: black;
+   background-color: ghostwhite;
    align-self: center;
    margin: 15px;
    padding: 10px;
    border-radius: 3px;
    cursor: pointer;
+}
+.carousel-button:hover {
+   background-color: red;
+   color: ghostwhite;
 }
 .choose-smugglr {
    margin: 20px auto;
@@ -114,8 +129,12 @@ h1 {
    width: 75px;
    padding: 0;
 }
+.choose-smugglr:hover {
+   background-color: red;
+   color: ghostwhite;
+}
 a {
-   background-color: green;
+   background-color: red;
    margin: 15px;
    padding: 10px;
    border-radius: 3px;
@@ -124,7 +143,8 @@ a {
 .carousel-container p {
    margin: 0 auto;
    text-align: center;
-   font-family: fantasy;
+   font-family: Courier;
+   letter-spacing: 0.1em;
 }
 .next {
    /* background-image: url('images/next-arrow.png');
@@ -167,16 +187,16 @@ a {
    .banner-questions p {
       /* font-size: 110%; */
       width: 28%;
-      /* margin: 0 auto 3em auto;
-      letter-spacing: 0.1em;
+      /* margin: 0 auto 3em auto; */
+      /* letter-spacing: 0.1em; */
       padding: 25px;
-      margin: 0 auto 10px auto; */
+      /* margin: 0 auto 10px auto; */
    }
    #info {
       width: 70%;
       /* font-size: 110%; */
       /* letter-spacing: 0.1em; */
-      margin: 0 auto 10px auto;
+      margin: 10px auto;
    }
    /* ======================
       USER INPUT
@@ -233,7 +253,7 @@ a {
       /* display: block; */
    }
    .carousel-button {
-      background-color: green;
+      /* background-color: green; */
       align-self: center;
       margin: 15px;
       padding: 10px;
@@ -242,8 +262,8 @@ a {
    }
    .choose-smugglr {
       margin: 20px auto;
-      background-color: ghostwhite;
-      color: black;
+      /* background-color: red; */
+      /* color: ghostwhite; */
       font-size: 20px;
       text-align: center;
       text-decoration: none;
@@ -252,88 +272,17 @@ a {
       padding: 0;
    }
    a {
-      background-color: green;
+      /* background-color: green; */
       margin: 15px;
       padding: 10px;
       border-radius: 3px;
       cursor: pointer;
    }
-   p {
+   .carousel-container p {
       margin: 0 auto;
       text-align: center;
-   }
-   .next {
-      /* background-image: url('images/next-arrow.png');
-      border: 1px solid blue;
-      background-size: contain; */
-      /* width:  */
-   }
-   .hide {
-      display: none;
-   }
-   .show {
-      display: block;
-   }
-}
-
-   /* ====================
-      CAROUSEL STYLING
-   ===================== */
-   .carousel-container {
-      max-width: 70%;
-      margin: 75px auto;
-      display: flex;
-      justify-content: center;
-   }
-   .carousel-cards {
-      /* width: 80%; */
-      /* border: 1px solid red; */
-      text-transform: capitalize;
-      margin: 0 auto;
-   }
-   .identity-card {
-      /* border: 1px solid green; */
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-   }
-   .profile-photo {
-      display: block;
-      margin: 0 auto 20px auto;
-      /* border: 1px solid blue; */
-   }
-   .identity-card:first-of-type {
-      /* display: block; */
-   }
-   .carousel-button {
-      background-color: green;
-      align-self: center;
-      margin: 15px;
-      padding: 10px;
-      border-radius: 3px;
-      cursor: pointer;
-   }
-   .choose-smugglr {
-      margin: 20px auto;
-      background-color: ghostwhite;
-      color: black;
-      font-size: 20px;
-      text-align: center;
-      text-decoration: none;
-      height: 25px;
-      width: 75px;
-      padding: 0;
-   }
-   a {
-      background-color: green;
-      margin: 15px;
-      padding: 10px;
-      border-radius: 3px;
-      cursor: pointer;
-   }
-   p {
-      margin: 0 auto;
-      text-align: center;
+      /* text-align: center; */
+      /* font-family: fantasy; */
    }
    .next {
       /* background-image: url('images/next-arrow.png');

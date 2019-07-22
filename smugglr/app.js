@@ -39,7 +39,7 @@ const nationalityTranslation = (data) => {
 const randomSelector = (array) => {
    Math.floor(Math.random() * array.length);
 };
-
+//Array used to generate 'Specialises In' on Profiles
 const specialiseInSmuggling = ['Animals (Except Dingos)', 'Dingos', 'Food & Agriculture', 'Fine Art', 'Antiques & Rare Relics', 'Fine Wine/Moonshine', 'Diamonds', 'Gems & Precious Metals', 'Heavy Metals & Compounds', 'Secret Information', 'Electronics'];
 //Array of Languages used to generate 'Fluent In' on Profiles
 const languagesFluentIn = ['english', 'spanish', 'french', 'german', 'portuguese', 'italian', 'mandarin', 'hindi', 'arabic', 'russian', 'turkish', 'polish', 'danish', 'swedish', 'irish gaelic', 'norwegian', 'dutch', 'persian', 'finnish'];
@@ -52,22 +52,6 @@ const randomNumberOfLanguages = [2, 3, 4, 5];
 
 $(() => {
 
-   const $generateCard = () => {
-      //Create variable for first name
-      const $firstName = $('<div>').text(data.results[0].name.first);
-      //Create variable for last name
-      const $lastName = $('<div>').text(data.results[0].name.last);
-      //Create variable for profile picture
-      const $photo = $('<img>').addClass('profile-photo').attr('src', data.results[0].picture.large);
-      //Create Identity Profile Card
-      const $card = $('<div>').addClass('identity-card');
-      //Compile Identity Data together
-      const $cardData = $('<div>').append($photo).append($firstName).append($lastName);
-      //Add Identity Data to Profile Card
-      $card.append($cardData).append($photo);
-
-      $('.carousel-cards').append($card);
-   }
    //////////////////////////////
    // Submit Generate Selection
    //////////////////////////////
@@ -294,12 +278,6 @@ $(() => {
          $currentCard = $('.carousel-cards').children().eq(currentCarouselCard);
          $currentCard.removeClass('hide').addClass('show');
       })
-
-
-
-
-
-
 
    });
 
