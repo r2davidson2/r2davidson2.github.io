@@ -22,7 +22,8 @@ h1 {
    margin: 20px auto;
 }
 .banner-questions p {
-   font-size: 110%;
+   font-size: 150%;
+   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
    width: 65%;
    margin: 0 auto 3em auto;
    letter-spacing: 0.1em;
@@ -120,9 +121,10 @@ a {
    border-radius: 3px;
    cursor: pointer;
 }
-p {
+.carousel-container p {
    margin: 0 auto;
    text-align: center;
+   font-family: fantasy;
 }
 .next {
    /* background-image: url('images/next-arrow.png');
@@ -164,7 +166,7 @@ p {
    }
    .banner-questions p {
       /* font-size: 110%; */
-      width: 30%;
+      width: 28%;
       /* margin: 0 auto 3em auto;
       letter-spacing: 0.1em;
       padding: 25px;

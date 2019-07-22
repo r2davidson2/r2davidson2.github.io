@@ -41,9 +41,9 @@ const randomSelector = (array) => {
 };
 
 const specialiseInSmuggling = ['Animals (Except Dingos)', 'Dingos', 'Food & Agriculture', 'Fine Art', 'Antiques & Rare Relics', 'Fine Wine/Moonshine', 'Diamonds', 'Gems & Precious Metals', 'Heavy Metals & Compounds', 'Secret Information', 'Electronics'];
-
+//Array of Languages used to generate 'Fluent In' on Profiles
 const languagesFluentIn = ['english', 'spanish', 'french', 'german', 'portuguese', 'italian', 'mandarin', 'hindi', 'arabic', 'russian', 'turkish', 'polish', 'danish', 'swedish', 'irish gaelic', 'norwegian', 'dutch', 'persian', 'finnish'];
-
+//Array used to randomly select the number of languages spoken on Profiles
 const randomNumberOfLanguages = [2, 3, 4, 5];
 
 
@@ -200,6 +200,49 @@ $(() => {
             };
 
                $('.carousel-cards').append($card);
+
+               //////////////////////
+               // SELECT SMUGGLR BUTTON
+               //////////////////////
+               const $hireSmuggler = $('.choose-smugglr');
+               const hireSmugglerWebsiteRedirect = () => {
+                  if (data.results[0].nat === 'AU') {
+                     return 'https://www.abf.gov.au/importing-exporting-and-manufacturing/prohibited-goods/list-of-items';
+                  } else if (data.results[0].nat === 'BR') {
+                     return 'http://www.pmerj.rj.gov.br/';
+                  } else if (data.results[0].nat === 'CA') {
+                     return 'https://www.cbsa-asfc.gc.ca/travel-voyage/rpg-mrp-eng.html';
+                  } else if (data.results[0].nat === 'CH') {
+                     return 'https://www.ezv.admin.ch/ezv/en/home/information-individuals/travel-and-purchases--allowances-and-duty-free-limit/importation-into-switzerland/restrictions.html';
+                  } else if (data.results[0].nat === 'DE') {
+                     return 'https://www.zoll.de/EN/Private-individuals/Travel/Entering-Germany/Restrictions/restrictions_node.html;jsessionid=607DFF0524B81227FFAF8BEAB861C784.live4651';
+                  } else if (data.results[0].nat === 'DK') {
+                     return 'https://politi.dk/koebenhavns-politi';
+                  } else if (data.results[0].nat === 'ES') {
+                     return 'https://www.policia.es/';
+                  } else if (data.results[0].nat === 'FI') {
+                     return 'https://tulli.fi/en/private-persons/travelling/restrictions';
+                  } else if (data.results[0].nat === 'FR') {
+                     return 'http://ee.france.fr/en/information/customs-rules';
+                  } else if (data.results[0].nat === 'GB') {
+                     return 'https://www.gov.uk/duty-free-goods/banned-and-restricted-goods';
+                  } else if (data.results[0].nat === 'IE') {
+                     return 'https://www.revenue.ie/en/customs-traders-and-agents/prohibitions-and-restrictions/index.aspx';
+                  } else if (data.results[0].nat === 'IR') {
+                     return 'http://www.irica.gov.ir/general_content/77254/77254.htm';
+                  } else if (data.results[0].nat === 'NO') {
+                     return 'https://www.toll.no/en/goods/';
+                  } else if (data.results[0].nat === 'NL') {
+                     return 'https://www.belastingdienst.nl/wps/wcm/connect/bldcontenten/belastingdienst/individuals/abroad_and_customs/restricted_prohibited_import_export/';
+                  } else if (data.results[0].nat === 'NZ') {
+                     return 'https://www.customs.govt.nz/business/import/prohibited-and-restricted-imports/prohibitions-and-restrictions/';
+                  } else if (data.results[0].nat === 'TR') {
+                     return 'https://www.trade.gov.tr/';
+                  } else if (data.results[0].nat === 'US') {
+                     return 'https://www.cbp.gov/travel/us-citizens/know-before-you-go/prohibited-and-restricted-items';
+                  }
+               };
+               $hireSmuggler.attr('href', hireSmugglerWebsiteRedirect());
          },
             (error) => {
                console.log(error);
@@ -252,24 +295,11 @@ $(() => {
          $currentCard.removeClass('hide').addClass('show');
       })
 
-      //////////////////////
-      // SELECT SMUGGLR BUTTON
-      //////////////////////
-      const $selectSmuggler = $('.choose-smugglr');
 
-      // const $correctWebsite = $('<a>').attr('href', 'https://www.cbp.gov/contact');
-      //
-      $selectSmuggler.attr('href', 'https://www.cbp.gov/contact')
 
-      // $selectSmuggler.on('click', () => {
-      //    const $correctWebsite = $('<a>').attr('href', 'https://www.cbp.gov/contact');
-      //
-      //    $selectSmuggler.append($correctWebsite);
-      //
-      //    // event.preventDefault();
-      //    console.log("it's the correct button");
-      //
-      // })
+
+
+
 
    });
 
