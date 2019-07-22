@@ -1,0 +1,300 @@
+/* ===========================
+      MOBILE STYLING
+=========================== */
+
+/*  BODY
+//////////// */
+body {
+   background-color: black;
+   color: ghostwhite;
+   display: flex;
+   flex-direction: column;
+}
+/* HEADER
+================*/
+header {
+   text-align: center;
+
+}
+h1 {
+   color: red;
+   font-size: 500%;
+   max-width: 80%;
+   margin: 20px auto;
+}
+.banner-questions p {
+   color: ghostwhite;
+   font-size: 150%;
+   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+   width: 65%;
+   margin: 0 auto 3em auto;
+   letter-spacing: 0.1em;
+   padding: 10px;
+   margin: 0 auto 10px auto;
+   display: flex;
+   align-items: center;
+}
+.diamond:hover {
+   color: red;
+}
+#info {
+   width: 80%;
+   color: lightgrey;
+   font-size: 110%;
+   letter-spacing: 0.1em;
+   margin: 30px auto 10px auto;
+}
+/* ======================
+   USER INPUT
+====================== */
+.user-input-interface {
+   text-align: center;
+   margin: 20px auto;
+   display: block;
+}
+.user-input-button {
+   outline: none;
+}
+.select {
+   outline: none;
+   width: 175px;
+   height: 30px;
+   font-family: Courier;
+   font-size: 20px;
+   background-color: ghostwhite;
+   color: black;
+   /* margin-right: 5px; */
+}
+.submit {
+   outline: none;
+   width: 175px;
+   height: 30px;
+   font-family: Courier;
+   font-size: 20px;
+   border-radius: 5px;
+   background-color: ghostwhite;
+   color: black;
+   /* margin-left: 5px; */
+}
+/* ====================
+   CAROUSEL STYLING
+===================== */
+.carousel-container {
+   /* width: 100%; */
+   margin: 0px auto;
+   display: flex;
+   justify-content: center;
+}
+.carousel-cards {
+   /* width: 80%; */
+   /* border: 1px solid red; */
+   text-transform: capitalize;
+   margin: 0 auto;
+}
+.identity-card {
+   /* border: 1px solid green; */
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+}
+.profile-photo {
+   display: block;
+   margin: 0 auto 20px auto;
+   /* border: 1px solid blue; */
+}
+.identity-card:first-of-type {
+   /* display: block; */
+}
+.carousel-button {
+   color: black;
+   background-color: ghostwhite;
+   align-self: center;
+   margin: 15px;
+   padding: 10px;
+   border-radius: 3px;
+   cursor: pointer;
+}
+.carousel-button:hover {
+   background-color: red;
+   color: ghostwhite;
+}
+.choose-smugglr {
+   margin: 20px auto;
+   background-color: ghostwhite;
+   color: black;
+   font-size: 20px;
+   text-align: center;
+   text-decoration: none;
+   height: 25px;
+   width: 75px;
+   padding: 0;
+}
+.choose-smugglr:hover {
+   background-color: red;
+   color: ghostwhite;
+}
+a {
+   background-color: red;
+   margin: 15px;
+   padding: 10px;
+   border-radius: 3px;
+   cursor: pointer;
+}
+.carousel-container p {
+   margin: 0 auto;
+   text-align: center;
+   font-family: Courier;
+   letter-spacing: 0.1em;
+}
+.next {
+   /* background-image: url('images/next-arrow.png');
+   border: 1px solid blue;
+   background-size: contain; */
+   /* width:  */
+}
+.hide {
+   display: none;
+}
+.show {
+   display: block;
+}
+
+/* ===========================
+   Desktop Styling
+============================ */
+@media screen and (min-width: 600px) {
+   /*  BODY
+   //////////// */
+   /* body {
+      background-color: black;
+      color: ghostwhite;
+      display: flex;
+      flex-direction: column;
+   } */
+    /* HEADER
+    ================*/
+   /* header {
+      text-align: center;
+
+   } */
+   h1 {
+      font-size: 750%;
+   }
+   .banner-questions {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px auto 50px auto;
+   }
+   .banner-questions p {
+      /* font-size: 110%; */
+      width: 28%;
+
+      /* letter-spacing: 0.1em; */
+      padding: 25px;
+      /* margin: 0 auto 10px auto; */
+   }
+   #info {
+      width: 70%;
+      /* font-size: 110%; */
+      /* letter-spacing: 0.1em; */
+      margin: 20px auto;
+   }
+   /* ======================
+      USER INPUT
+   ====================== */
+   .user-input-interface {
+      /* text-align: center; */
+      margin: 20px auto;
+   }
+   /* .user-input-button {
+      outline: none;
+   } */
+   .select {
+      /* outline: none; */
+      /* width: 175px; */
+      /* height: 30px; */
+      /* font-size: 20px; */
+      margin-right: 10px;
+   }
+   .submit {
+      /* outline: none; */
+      /* width: 175px; */
+      /* height: 30px; */
+      /* font-size: 20px; */
+      /* border-radius: 5px; */
+      margin-left: 10px;
+   }
+   /* ====================
+      CAROUSEL STYLING
+   ===================== */
+   .carousel-container {
+      max-width: 70%;
+      margin: 75px auto;
+      display: flex;
+      justify-content: center;
+   }
+   .carousel-cards {
+      /* width: 80%; */
+      /* border: 1px solid red; */
+      text-transform: capitalize;
+      margin: 0 auto;
+   }
+   .identity-card {
+      /* border: 1px solid green; */
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+   }
+   .profile-photo {
+      display: block;
+      margin: 0 auto 20px auto;
+      /* border: 1px solid blue; */
+   }
+   .identity-card:first-of-type {
+      /* display: block; */
+   }
+   .carousel-button {
+      /* background-color: green; */
+      align-self: center;
+      margin: 15px;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+   }
+   .choose-smugglr {
+      margin: 20px auto;
+      /* background-color: red; */
+      /* color: ghostwhite; */
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      height: 25px;
+      width: 75px;
+      padding: 0;
+   }
+   a {
+      /* background-color: green; */
+      margin: 15px;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+   }
+   .carousel-container p {
+      margin: 0 auto;
+      text-align: center;
+      /* text-align: center; */
+      /* font-family: fantasy; */
+   }
+   .next {
+      /* background-image: url('images/next-arrow.png');
+      border: 1px solid blue;
+      background-size: contain; */
+      /* width:  */
+   }
+   .hide {
+      display: none;
+   }
+   .show {
+      display: block;
+   }
+}

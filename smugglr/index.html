@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title></title>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
+      <script src="app.js" charset="utf-8"></script>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <header>
+         <h1>Smugglr</h1>
+         <div class="banner-questions">
+            <p class="diamond">Did you pull off the diamond heist of the century?</p>
+            <p class="diamond">Did your dingo eat a baby?</p>
+            <p class="diamond">Need to relocate your newly acquired Renoir?</p>
+         </div>
+         <p id="info">You can rely on our experienced, professional team of smugglers, bootleggers, and contraband coordinators. Choose your destination country to see our selection of highly-qualified, country-specific smugglers.</p>
+      </header>
+      <div class="user-input-interface">
+         <form>
+            <select class="select">
+               <option selected hidden>Destination</option>
+               <option value="us">United States</option>
+               <option value="au">Australia</option>
+               <option value="br">Brazil</option>
+               <option value="ca">Canada</option>
+               <option value="dk">Denmark</option>
+               <option value="fi">Finland</option>
+               <option value="fr">France</option>
+               <option value="de">Germany</option>
+               <option value="ie">Ireland</option>
+               <option value="ir">Iran</option>
+               <option value="nl">Netherlands</option>
+               <option value="nz">New Zealand</option>
+               <option value="no">Norway</option>
+               <option value="es">Spain</option>
+               <option value="ch">Switzerland</option>
+               <option value="tr">Turkey</option>
+               <option value="gb">United Kingdom</option>
+            </select>
+            <button type="button" class="submit" name="button">Search</button>
+         </form>
+      </div>
+      <div class="carousel-container">
+         <div class="carousel-button previous hide"><</div>
+         <div class="">
+            <div class="carousel-cards"></div>
+            <!-- <button type="button" class="carousel-button choose-smugglr hide"><a class="test"></a>Select</button> -->
+            <a class="carousel-button choose-smugglr hide" href="">Hire</a>
+            </div>
+         <div class="carousel-button next hide">></div>
+      </div>
+
+   </body>
+</html>
