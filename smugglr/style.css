@@ -183,11 +183,12 @@ a {
    .banner-questions {
       display: flex;
       justify-content: space-around;
+      margin: 20px auto 50px auto;
    }
    .banner-questions p {
       /* font-size: 110%; */
       width: 28%;
-      /* margin: 0 auto 3em auto; */
+
       /* letter-spacing: 0.1em; */
       padding: 25px;
       /* margin: 0 auto 10px auto; */
@@ -196,7 +197,7 @@ a {
       width: 70%;
       /* font-size: 110%; */
       /* letter-spacing: 0.1em; */
-      margin: 10px auto;
+      margin: 20px auto;
    }
    /* ======================
       USER INPUT
