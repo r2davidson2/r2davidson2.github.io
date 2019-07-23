@@ -14,13 +14,20 @@ body {
 ================*/
 header {
    text-align: center;
-
 }
-h1 {
+header img {
+   width: 90%;
+}
+/* h1 {
    color: red;
    font-size: 500%;
    max-width: 80%;
    margin: 20px auto;
+} */
+.banner-questions {
+   /* display: flex;
+   justify-content: space-around; */
+   margin: 0 auto 20px auto;
 }
 .banner-questions p {
    color: ghostwhite;
@@ -37,10 +44,21 @@ h1 {
 .diamond:hover {
    color: red;
 }
+.response {
+   margin: 0 auto;
+   font-size: 200%;
+   /* font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; */
+   font-family: 'Times New Roman';
+   max-width: 85%;
+}
+.response:hover {
+   color: red;
+}
 #info {
    width: 80%;
    color: lightgrey;
-   font-size: 110%;
+   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+   font-size: 130%;
    letter-spacing: 0.1em;
    margin: 30px auto 10px auto;
 }
@@ -192,6 +210,9 @@ a {
       /* letter-spacing: 0.1em; */
       padding: 25px;
       /* margin: 0 auto 10px auto; */
+   }
+   .response {
+      margin: 0 auto 30px auto;
    }
    #info {
       width: 70%;
