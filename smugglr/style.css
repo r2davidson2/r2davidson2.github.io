@@ -18,12 +18,12 @@ header {
 header img {
    width: 90%;
 }
-/* h1 {
-   color: red;
+.header {
+   /* color: red; */
    font-size: 500%;
    max-width: 80%;
    margin: 20px auto;
-} */
+}
 .banner-questions {
    /* display: flex;
    justify-content: space-around; */
@@ -195,7 +195,7 @@ a {
       text-align: center;
 
    } */
-   h1 {
+   .header {
       font-size: 750%;
    }
    .banner-questions {
